@@ -7,7 +7,7 @@
 
 // Input logico: creare tramite array i vari oggetti: infine creare delle variabili vuote e riempirle con gli oggetti con determinate caratteristiche
 
-const cars [
+const cars = [
     { marca: "Volkswagen", modello: "Golf", alimentazione: "benzina" },
     { marca: "Ford", modello: "Fiesta", alimentazione: "benzina" },
     { marca: "Bmw", modello: "Serie 5", alimentazione: "diesel" },
@@ -19,4 +19,28 @@ const cars [
     { marca: "Tesla", modello: "Model 3", alimentazione: "elettrico" },
     { marca: "BYD", modello: "Atto III", alimentazione: "elettrico" },
 ];
+console.log(cars);
+
+const benzinaCar = [];
+const dieselCar = [];
+const otherCar = [];
+
+for (let i = 0; i < cars.length; i++) {
+    const currentCar = cars[i];
+    const motorCar = currentCar.alimentazione;
+    
+    if ( motorCar === "benzina" ) {
+        benzinaCar.push(currentCar);
+    } else if (motorCar === "diesel" ) {
+        dieselCar.push(currentCar);    
+    }    else {
+        otherCar.push(currentCar);
+    }
+}
+
+console.log("Le auto a benzina sono:", benzinaCar);
+console.log("Le auto a diesel sono:", dieselCar);
+//console.log(`Le altre auto hanno diverse tipologie di alimentazione ${otherCar}`); <=== scritto così stampa la lista con object
+console.log("Le auto con altri tipi di alimentazione sono", otherCar);
+
 
